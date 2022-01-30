@@ -79,7 +79,7 @@ EXPOSE $LISTEN_PORT
 
 WORKDIR /var/www/html
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chomd +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY vhosts-access-log.conf /etc/apache2/conf-enabled/other-vhosts-access-log.conf
 USER $USER
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
